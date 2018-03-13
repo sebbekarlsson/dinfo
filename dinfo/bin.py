@@ -21,6 +21,6 @@ def run():
     info += 'total number of files = {}\n'.format(files['count_total'])
     info += 'total number of lines = {}\n'.format(files['count_lines'])
     info += 'total size = {} MB\n'.format(files['count_size'])
-    info += 'Authors: [{}]'.format(', '.join(get_authors()))
+    info += 'authors: [{}]'.format(', '.join(get_authors()))
 
     print(info)

@@ -30,4 +30,4 @@
     > total number of files = 842
     > total number of lines = 259
     > total size = 0.045837 MB
-    > Authors: [sebastian karlsson <sebbekarlsson@gmail.com>] 
+    > authors: [sebastian karlsson <sebbekarlsson@gmail.com>] 
