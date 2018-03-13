@@ -32,49 +32,6 @@ def get_dirname():
 
 
 def get_all_files():
-    ignored_extensions = [
-        '.exe',
-        '.out',
-        '.egg',
-        '.swp',
-        '.swl',
-        '.swj',
-        '.jpg',
-        '.png',
-        '.gif',
-        '.jpeg',
-        '.bmp',
-        '.db',
-        '',
-        '.pyc',
-        '.ttf',
-        '.csh',
-        '.fish',
-        '.egg',
-        '.egg-link',
-        '.rst',
-        '.pot',
-        '.mo',
-        '.po',
-        '.pem',
-        '.tmpl',
-        '.7',
-        '.so',
-        '.o',
-        '.a',
-        '.pdf',
-        '.woff',
-        '.woff2',
-        '.gz',
-        '.zip',
-        '.dylib',
-        '.0',
-        '.build',
-        '.targ',
-        '.tgz',
-        '.m4'
-    ]
-
     full_path = get_full_dir_path()
 
     count = 0
@@ -87,9 +44,6 @@ def get_all_files():
 
         for _file in files:
             filename, ext = os.path.splitext(_file)
-
-            if ext in ignored_extensions:
-                continue
 
             file_path = os.path.join(root, _file)
 
