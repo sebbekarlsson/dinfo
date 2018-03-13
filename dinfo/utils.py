@@ -3,8 +3,11 @@ import subprocess
 
 
 def get_authors():
-    gitlog = subprocess.check_output(['git', 'log', '--all'])\
-        .decode('utf-8').split('\n')
+    try:
+        gitlog = subprocess.check_output(['git', 'log', '--all'])\
+            .decode('utf-8').split('\n')
+    except subprocess.CalledProcessError:
+        return []
 
     authors = []
 
@@ -12,7 +15,7 @@ def get_authors():
         if 'Author' not in entry:
             continue
 
-        author = entry.split('Author: ')[1]
+        author = entry.split('Author: ')[1].lower()
 
         if author not in authors:
             authors.append(author)
