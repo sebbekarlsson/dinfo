@@ -36,6 +36,8 @@ def get_dirname():
 
 def get_all_files():
     full_path = get_full_dir_path()
+    ignored_dirs = ['venv', 'node_modules', 'egg-info', '.git']
+    ignored_extensions = ['']
 
     count = 0
     total_lines = 0
@@ -48,7 +50,18 @@ def get_all_files():
         for _file in files:
             filename, ext = os.path.splitext(_file)
 
+            if ext in ignored_extensions:
+                continue
+
             file_path = os.path.join(root, _file)
+
+            do_continue = False
+            for ignored in ignored_dirs:
+                if ignored in root.split('/'):
+                    do_continue = True
+
+            if do_continue:
+                continue
 
             lines = 0
             with open(file_path) as __file:
