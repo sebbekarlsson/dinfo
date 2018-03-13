@@ -61,7 +61,18 @@ def get_all_files():
         '.7',
         '.so',
         '.o',
-        '.a'
+        '.a',
+        '.pdf',
+        '.woff',
+        '.woff2',
+        '.gz',
+        '.zip',
+        '.dylib',
+        '.0',
+        '.build',
+        '.targ',
+        '.tgz',
+        '.m4'
     ]
 
     full_path = get_full_dir_path()
